@@ -32,6 +32,7 @@
 
 <form name='login' action="<c:url value='/login'/>" method='POST'>
     <table>
+        <tr><h2>Register form</h2></tr>
         <tr>
             <td>UserName:</td>
             <td><input type='text' name='username' placeholder="Enter username"></td>

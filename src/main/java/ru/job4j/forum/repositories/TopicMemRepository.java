@@ -1,6 +1,5 @@
 package ru.job4j.forum.repositories;
 
-import org.springframework.stereotype.Repository;
 import ru.job4j.forum.models.Message;
 import ru.job4j.forum.models.Topic;
 
@@ -9,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Repository
+//@Repository
 public class TopicMemRepository {
     private static int TOPIC_ID = 0;
     private final Map<Integer, Topic> topics = new HashMap<>();

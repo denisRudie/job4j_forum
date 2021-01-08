@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.job4j.forum.models.Message;
 import ru.job4j.forum.models.Topic;
-import ru.job4j.forum.models.User;
 import ru.job4j.forum.services.TopicService;
 
 @Controller
@@ -34,13 +33,11 @@ public class TopicControl {
     }
 
     @PostMapping("/save")
-    public String saveTopic(@ModelAttribute Topic topic, @ModelAttribute Message msg,
-                            @ModelAttribute User user) {
-        topic.setAuthor(user);
-        msg.setAuthor(user);
-        topic.addMsg(msg);
-        service.updateTopic(topic);
-        return "redirect:/";
+    public String saveTopic(@ModelAttribute Topic topic,
+                            @ModelAttribute Message msg,
+                            @RequestParam("username") String username) {
+        Topic savedTopic = service.saveTopic(topic, username, msg);
+        return "redirect:/" + savedTopic.getId();
     }
 
     @GetMapping("/{id}")
@@ -53,9 +50,10 @@ public class TopicControl {
     }
 
     @PostMapping("/create_message")
-    public String createMessage(@RequestParam("id") int topicId, @ModelAttribute Message msg, @ModelAttribute User user) {
-        msg.setAuthor(user);
-        service.addMessage(topicId, msg);
+    public String createMessage(@RequestParam("topicId") int topicId,
+                                @ModelAttribute Message msg,
+                                @RequestParam("username") String username) {
+        service.addMessage(msg, topicId, username);
         return "redirect:/" + topicId;
     }
 }

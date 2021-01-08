@@ -1,12 +1,23 @@
 package ru.job4j.forum.models;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "messages")
 public class Message {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @ManyToOne
+    @JoinColumn(name = "author_id")
     private User author;
     private Date created;
     private String text;
+    @ManyToOne
+    @JoinColumn(name = "topic_id")
+    private Topic topic;
 
     public Message() {
         created = new Date();
@@ -42,5 +53,21 @@ public class Message {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Topic getTopic() {
+        return topic;
+    }
+
+    public void setTopic(Topic topic) {
+        this.topic = topic;
     }
 }

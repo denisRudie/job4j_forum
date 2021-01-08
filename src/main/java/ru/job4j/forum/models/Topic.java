@@ -1,17 +1,24 @@
 package ru.job4j.forum.models;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
+@Entity
+@Table(name = "topics")
 public class Topic {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String description;
     private Date created;
+    @ManyToOne
+    @JoinColumn(name = "author_id")
     private User author;
+    @OneToMany(mappedBy = "topic")
     private List<Message> messages = new ArrayList<>();
 
     public Topic() {
