@@ -3,6 +3,7 @@ package ru.job4j.forum.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.job4j.forum.models.Message;
 import ru.job4j.forum.models.Topic;
 import ru.job4j.forum.models.User;
@@ -46,6 +47,7 @@ public class TopicService {
         return topicRepository.findById(id).get();
     }
 
+    @Transactional
     public Topic saveTopic(Topic topic, String username, Message msg) {
         if (topic.getId() != 0) {
             Topic t = getTopicById(topic.getId());
@@ -63,6 +65,7 @@ public class TopicService {
         }
     }
 
+    @Transactional
     public Message addMessage(Message msg, int topicId, String username) {
         User u = getUserByName(username);
         msg.setAuthor(u);
