@@ -36,8 +36,8 @@ public class TopicControl {
     public String saveTopic(@ModelAttribute Topic topic,
                             @ModelAttribute Message msg,
                             @RequestParam("username") String username) {
-        Topic savedTopic = service.saveTopic(topic, username, msg);
-        return "redirect:/" + savedTopic.getId();
+        service.saveTopic(topic, username, msg);
+        return "redirect:/" + topic.getId();
     }
 
     @GetMapping("/{id}")
@@ -50,8 +50,8 @@ public class TopicControl {
     }
 
     @PostMapping("/create_message")
-    public String createMessage(@RequestParam("topicId") int topicId,
-                                @ModelAttribute Message msg,
+    public String createMessage(@ModelAttribute Message msg,
+                                @RequestParam("topicId") int topicId,
                                 @RequestParam("username") String username) {
         service.addMessage(msg, topicId, username);
         return "redirect:/" + topicId;
