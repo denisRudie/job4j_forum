@@ -1,15 +1,11 @@
-drop table if exists authorities;
+-- drop table if exists authorities cascade ;
 CREATE TABLE if not exists authorities
 (
     id        serial primary key,
     authority VARCHAR(50) NOT NULL unique
 );
-insert into authorities (authority)
-values ('ROLE_USER');
-insert into authorities (authority)
-values ('ROLE_ADMIN');
 
-drop table if exists users;
+-- drop table if exists users cascade ;
 CREATE TABLE if not exists users
 (
     id           serial primary key,
@@ -19,7 +15,7 @@ CREATE TABLE if not exists users
     role_id int          not null references authorities (id)
 );
 
-drop table if exists topics;
+-- drop table if exists topics cascade ;
 create table if not exists topics
 (
     id        serial primary key,
@@ -29,7 +25,7 @@ create table if not exists topics
     author_id int references users (id)
 );
 
-drop table if exists messages;
+-- drop table if exists messages cascade ;
 create table if not exists messages
 (
     id          serial primary key,
