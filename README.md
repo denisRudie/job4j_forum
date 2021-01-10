@@ -2,8 +2,10 @@
 [![Build Status](https://travis-ci.com/denisRudie/job4j_forum.svg?branch=main)](https://travis-ci.com/denisRudie/job4j_forum)
 ![Heroku](https://heroku-badge.herokuapp.com/?app=job4j-forum-dr&style=flat&svg=1)
 [![codecov](https://codecov.io/gh/denisRudie/job4j_forum/branch/main/graph/badge.svg)](https://codecov.io/gh/denisRudie/job4j_forum)
-###Демо стенд [Heroku](https://job4j-forum-dr.herokuapp.com):  
-####Данные для входа:
+
+### Демо стенд [Heroku](https://job4j-forum-dr.herokuapp.com)
+
+Данные для входа:
 * login: user
 * password: 1
 ### Возможности:
