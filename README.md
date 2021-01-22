@@ -5,8 +5,8 @@
 
 ### О проекте
 Сервис предоставляет возможности классического форума.
-###Демо стенд [Heroku](https://job4j-forum-dr.herokuapp.com):  
-####Данные для входа:
+### Демо стенд [Heroku](https://job4j-forum-dr.herokuapp.com):  
+#### Данные для входа:
 * login: user
 * password: 1
 ### Возможности:
