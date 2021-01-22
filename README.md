@@ -2,6 +2,9 @@
 [![Build Status](https://travis-ci.com/denisRudie/job4j_forum.svg?branch=main)](https://travis-ci.com/denisRudie/job4j_forum)
 ![Heroku](https://heroku-badge.herokuapp.com/?app=job4j-forum-dr&style=flat&svg=1)
 [![codecov](https://codecov.io/gh/denisRudie/job4j_forum/branch/main/graph/badge.svg)](https://codecov.io/gh/denisRudie/job4j_forum)
+
+### О проекте
+Сервис предоставляет возможности классического форума.
 ###Демо стенд [Heroku](https://job4j-forum-dr.herokuapp.com):  
 ####Данные для входа:
 * login: user
@@ -21,3 +24,15 @@
 * Junit, Mockito
 * Liquibase
 * CI/CD Travis
+### Screenshots
+Main page
+![ScreenShot](images/mainPage.jpg)
+
+Topic creating page
+![ScreenShot](images/topicCreatingPage.jpg)
+
+Topic page
+![ScreenShot](images/topicPage.jpg)
+
+DB Schema
+![ScreenShot](images/dbSchema.jpg)
